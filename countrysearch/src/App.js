@@ -28,6 +28,7 @@ const handleSearch = (e) => {
 
 return (
   <div> <input
+  className="txtt"
   type="text"
   placeholder="Search for a country"
   value={searchTerm}
@@ -49,7 +50,9 @@ return (
     filteredCountries.length === 0 ?(
       ""):(
         <ul>
+          <div className="cardStyles">
         {filteredCountries.map(country => (
+          
          <div key={country.cca3} className="cardStyle">
          <img
          src={country.flags.png}
@@ -58,7 +61,9 @@ return (
          />
          <h2>{country.name.common}</h2>
          </div>
+        
         ))}
+         </div>
       </ul>
       )
    )}

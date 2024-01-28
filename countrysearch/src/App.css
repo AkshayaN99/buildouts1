@@ -1,3 +1,17 @@
+.txtt{
+  margin-left: 500px;
+  height: 40px;
+  width: 300px;
+}
+
+.cardStyles{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
 .cardStyle{
   width: 200px;
@@ -9,12 +23,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-};
+}
  
 .imageStyle{
   width: 100px;
   height: 100px;
-};
+}
 
 .containerStyle{
   display: flex;
@@ -22,4 +36,4 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-};
+}
