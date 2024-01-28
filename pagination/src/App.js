@@ -5,6 +5,7 @@ function App () {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
   const itemsPerPage = 10;
 
   useEffect(() => {
@@ -13,12 +14,14 @@ function App () {
       try {
         // Replace the API endpoint with your actual API endpoint
         const response = await fetch(` https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
         const result = await response.json();
         setData(result);
         setTotalPages(Math.ceil(result.length / itemsPerPage));
       } catch (error) {
-        console.error('Error fetching data:', error);
-        alert('ERROR');
+        setError(error.message);
       }
     };
 
@@ -43,6 +46,11 @@ function App () {
 
   return (
     <div>
+      {error && (
+        <div style={{ color: 'red', marginBottom: '10px' }}>
+          <strong>Error:</strong> {error}
+        </div>
+      )}
       <h1>Employee Data Table</h1>
       
 
