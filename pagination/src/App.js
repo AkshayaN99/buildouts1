@@ -18,6 +18,7 @@ function App () {
         setTotalPages(Math.ceil(result.length / itemsPerPage));
       } catch (error) {
         console.error('Error fetching data:', error);
+        alert('ERROR');
       }
     };
 
