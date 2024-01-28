@@ -40,17 +40,19 @@ function App () {
     }
   };
 
+  useEffect(() => {
+    if (error) {
+      alert(`Error: ${error}`);
+    }
+  }, [error]);
+
   // Calculate the range of items to display for the current page
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = Math.min(startIndex + itemsPerPage, data.length);
 
   return (
     <div>
-      {error && (
-        <div style={{ color: 'red', marginBottom: '10px' }}>
-          <strong>Error:</strong> {error}
-        </div>
-      )}
+     
       <h1>Employee Data Table</h1>
       
 
