@@ -55,10 +55,10 @@ return (
    </div>):(
     filteredCountries.length === 0 ?(
       ""):(
-        //<div  className="countryCard">
+        
           <div className="cardStyles">
         {filteredCountries.map(country => (
-          
+          <div  className="countryCard">
          <div key={country.cca3} className="cardStyle">
          <img
          src={country.flags.png}
@@ -67,10 +67,10 @@ return (
          />
          <h2>{country.name.common}</h2>
          </div>
-        
+         </div>
         ))}
          </div>
-     // </div>
+      
       )
    )}
    </div>
