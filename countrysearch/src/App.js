@@ -36,7 +36,7 @@ return (
   value={searchTerm}
   onChange={handleSearch}
 /></div>
-<div  className="countryCard">
+
 {searchTerm==="" ?
    (<div  className="countryCard">
    <div className="containerStyle">
@@ -74,7 +74,7 @@ return (
       )
    )}
    </div>
-   </div>
+   
   );
 }
 
