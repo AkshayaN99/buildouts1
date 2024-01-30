@@ -36,9 +36,10 @@ return (
   value={searchTerm}
   onChange={handleSearch}
 /></div>
-<div>
+<div  className="countryCard">
 {searchTerm==="" ?
-   (<div className="containerStyle">
+   (<div  className="countryCard">
+   <div className="containerStyle">
     {countries.map((country)=>(
       <div key={country.cca3} className="cardStyle">
         <img
@@ -48,11 +49,13 @@ return (
         />
         <h2>{country.name.common}</h2>
         </div>
+        
     ))}
+   </div>
    </div>):(
     filteredCountries.length === 0 ?(
       ""):(
-        
+        <div  className="countryCard">
           <div className="cardStyles">
         {filteredCountries.map(country => (
           
@@ -67,7 +70,7 @@ return (
         
         ))}
          </div>
-      
+      </div>
       )
    )}
    </div>
