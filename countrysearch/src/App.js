@@ -55,7 +55,7 @@ return (
    </div>):(
     filteredCountries.length === 0 ?(
       ""):(
-        <div  className="countryCard">
+        //<div  className="countryCard">
           <div className="cardStyles">
         {filteredCountries.map(country => (
           
@@ -70,7 +70,7 @@ return (
         
         ))}
          </div>
-      </div>
+     // </div>
       )
    )}
    </div>
