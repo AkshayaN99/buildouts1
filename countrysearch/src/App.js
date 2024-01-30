@@ -27,13 +27,16 @@ const handleSearch = (e) => {
 };
 
 return (
-  <div> <input
+  <div> 
+    <div>
+    <input
   className="txtt"
   type="text"
   placeholder="Search for a country"
   value={searchTerm}
   onChange={handleSearch}
-/>
+/></div>
+<div>
 {searchTerm==="" ?
    (<div className="containerStyle">
     {countries.map((country)=>(
@@ -49,7 +52,7 @@ return (
    </div>):(
     filteredCountries.length === 0 ?(
       ""):(
-        <ul>
+        
           <div className="cardStyles">
         {filteredCountries.map(country => (
           
@@ -64,9 +67,10 @@ return (
         
         ))}
          </div>
-      </ul>
+      
       )
    )}
+   </div>
    </div>
   );
 }
